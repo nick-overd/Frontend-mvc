@@ -22,7 +22,7 @@ def get_by_notebook_id(id):
 def get_all_notebook():
     notebooks = db.session.query(Notebook).all()
     print(notebooks)
-    return json.dumps(notebooks, cls=AlchemyEncoder)
+    return render_template("notebooks.html", title="My Notebookss", notebooks=notes)
 
 
 @app.route("/notebook", methods=["PATCH", "PUT"])
