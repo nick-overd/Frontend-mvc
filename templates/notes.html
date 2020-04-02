@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body_content %}
+
+    <ul> 
+    {% for note in notes %}
+    <a href={{ url_for( "get_by_id", note_id = note.id )}}> <li> {{ note.text }}</li> </a>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

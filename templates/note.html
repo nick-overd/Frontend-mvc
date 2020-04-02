@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body_content %}
+
+     
+<p><strong>Id: </strong> {{ note.id }}</p>
+<p><strong>Test: </strong> {{ note.text}} </p>    
+
+<form method="POST" action {{ url_for( "delete", id = note.id )}}>
+    <input type="submit"  value ="Delete"/>
+</form>
+
+{% endblock %}
