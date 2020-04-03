@@ -1,12 +1,15 @@
 {% extends "layout.html" %}
 {% block body_content %}
 
-     
-<p><strong>Id: </strong> {{ note.id }}</p>
-<p><strong>Test: </strong> {{ note.text}} </p>    
+<p><strong>Id: </strong> {{ note.id }} </p>
+<p><strong>Text: </strong> {{ note.text }} </p>
 
-<form method="POST" action {{ url_for( "delete", id = note.id )}}>
-    <input type="submit"  value ="Delete"/>
+<form action={{ url_for ( 'edit_note', note_id = note.id ) }}>
+    <button type="submit">Edit</button>
+</form>
+
+<form method="POST" action= {{ url_for( "delete", id = note.id ) }}>
+    <button type="submit">Delete</button>
 </form>
 
 {% endblock %}
