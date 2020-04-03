@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body_content %}
+
+<form method="POST" action = {{ url_for ( "add_note" ) }}>
+    <input type="text" name= {{ current_notebook.id }} readonly/>
+    <input type="text" name="text"/>
+    <input type="submit"/>
+</form>
+
+<form action={{ url_for ( 'edit_note', note_id = note.id ) }}>
+    <input type="text" name= {{ current_notebook.id }} readonly/>
+    <input type="text" name="text"/>
+    <button type="submit">Edit</button>
+</form>
+
+<form method="POST" action {{ url_for( "delete", id = note.id )}}>
+    <input type="submit"  value ="Delete"/>
+</form>
+
+
+
+{% endblock %}
